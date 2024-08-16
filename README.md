@@ -48,15 +48,6 @@ python run_workflow.py
 2. **Observe the Output**:
    - The script will print the randomized values for `a` and `b`, and display the workflow output, including the sum, product, difference, division result, modulus result, and aggregated result.
 
-### Example Command Used in the Script
-The script internally executes the following command with randomized values:
-
-```bash
-pyDomino Flows run --remote workflow.py complex_math_workflow --a <random_a> --b <random_b>
-```
-
-Replace `<random_a>` and `<random_b>` with the randomly generated values for `a` and `b`.
-
 ## Summary
 
 This demonstration is an example of leveraging Domino Flows's capabilities to build complex workflows with parallel task execution, dependencies, and result aggregation. 
