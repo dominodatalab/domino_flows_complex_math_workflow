@@ -2,7 +2,7 @@
 
 This repository demonstrates a complex Domino Flows workflow that showcases parallel task execution, task dependencies, and result aggregation. The workflow is designed to perform various mathematical operations, including addition, subtraction, multiplication, division, modulus, and aggregation of results.
 
-![Workflow Demo](demo.jpg)
+[Workflow Demo](demo.jpg)
 
 ## Files Overview
 
