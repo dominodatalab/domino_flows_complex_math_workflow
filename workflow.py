@@ -5,8 +5,8 @@ from flytekitplugins.domino.task import DominoJobConfig, DominoJobTask
 def complex_math_workflow(a: int, b: int) -> (int, int, int, str, str, int):
     # Create addition task
     add_task = DominoJobTask(
-        name='Read Data',
-        domino_job_config=DominoJobConfig(Command="python read.py"),
+        name='Add numbers',
+        domino_job_config=DominoJobConfig(Command="python add.py"),
         inputs={'first_value': int, 'second_value': int},
         outputs={'sum': int},
         use_latest=True
@@ -15,8 +15,8 @@ def complex_math_workflow(a: int, b: int) -> (int, int, int, str, str, int):
 
     # Create multiplication task
     multiply_task = DominoJobTask(
-        name='List Columns',
-        domino_job_config=DominoJobConfig(Command="python list.py"),
+        name='Multiply numbers',
+        domino_job_config=DominoJobConfig(Command="python multiply.py"),
         inputs={'first_value': int, 'second_value': int},
         outputs={'product': int},
         use_latest=True
@@ -25,8 +25,8 @@ def complex_math_workflow(a: int, b: int) -> (int, int, int, str, str, int):
 
     # Create subtraction task that depends on the addition task
     subtract_task = DominoJobTask(
-        name='Drop Columns',
-        domino_job_config=DominoJobConfig(Command="python drop.py"),
+        name='Subtract numbers',
+        domino_job_config=DominoJobConfig(Command="python subtract.py"),
         inputs={'first_value': int, 'second_value': int},
         outputs={'difference': int},
         use_latest=True
@@ -35,8 +35,8 @@ def complex_math_workflow(a: int, b: int) -> (int, int, int, str, str, int):
 
     # Create division task that runs in parallel with the subtraction task
     divide_task = DominoJobTask(
-        name='Prophet Magic',
-        domino_job_config=DominoJobConfig(Command="python prophet.py"),
+        name='Divide numbers',
+        domino_job_config=DominoJobConfig(Command="python divide.py"),
         inputs={'first_value': int, 'second_value': int},
         outputs={'division': str},
         use_latest=True
@@ -45,8 +45,8 @@ def complex_math_workflow(a: int, b: int) -> (int, int, int, str, str, int):
 
     # Create modulus task that runs in parallel with the subtraction and division tasks
     modulus_task = DominoJobTask(
-        name='Record Experiment',
-        domino_job_config=DominoJobConfig(Command="python experiment.py"),
+        name='Modulus numbers',
+        domino_job_config=DominoJobConfig(Command="python modulus.py"),
         inputs={'first_value': int, 'second_value': int},
         outputs={'modulus': str},
         use_latest=True
